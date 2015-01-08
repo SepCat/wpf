@@ -26,12 +26,22 @@ namespace wpfBlend
         }
         private void button1_Click(object sender,RoutedEventArgs e) 
         {
+            this.password.Visibility = Visibility.Collapsed;
+            this.usrName.Visibility = Visibility.Collapsed;
+            this.label1.Visibility = Visibility.Collapsed;
+            this.label2.Visibility = Visibility.Collapsed;
+
             // 使用一个IntPtr类型值来存储加密字符串的起始点  
             IntPtr p = System.Runtime.InteropServices.Marshal.SecureStringToBSTR(this.password.SecurePassword);
 
             // 使用.NET内部算法把IntPtr指向处的字符集合转换成字符串  
             string password = System.Runtime.InteropServices.Marshal.PtrToStringBSTR(p);
             MessageBox.Show(password);
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) 
+        { 
+            this.DragMove(); 
         }
 
     }

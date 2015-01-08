@@ -2,7 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="wpfBlend.Window1"
-    Title="ProMISe, Your professional MIS eSystem" Height="436" Width="625" WindowStyle="ThreeDBorderWindow" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    Title="ProMISe, Your professional MIS eSystem" Height="436" Width="625" WindowStyle="None" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" MaxWidth="625" MaxHeight="436" MinHeight="436" MinWidth="625" ResizeMode="CanMinimize"
+    MouseLeftButtonDown="Window_MouseLeftButtonDown">
 	<Window.Resources>
 		<Style x:Key="ButtonStyle1" BasedOn="{x:Null}" TargetType="{x:Type Button}">
 			<Setter Property="Template">

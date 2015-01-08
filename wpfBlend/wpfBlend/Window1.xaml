@@ -1,0 +1,52 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="wpfBlend.Window1"
+    Title="ProMISe, Your professional MIS eSystem" Height="436" Width="625" WindowStyle="ThreeDBorderWindow" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	<Window.Resources>
+		<Style x:Key="ButtonStyle1" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Rectangle Opacity="0.5" Fill="#FFFDF86C" Stroke="#FF000000" RadiusX="6" RadiusY="6"/>
+							<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Storyboard x:Key="OnClick1"/>
+	</Window.Resources>
+  <Window.Background>
+    <ImageBrush ImageSource="main_backgroud.jpg"/>
+  </Window.Background>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button"/>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+	</Window.Triggers>
+    <Grid>
+    	<Button Margin="209,0,0,29" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Bottom" Height="25" Content="login" x:Name="button"
+              Click="button1_Click" HorizontalAlignment="Left" Width="198" BorderBrush="#FFE33C97" Foreground="#FF1F3F9E" >
+    		<Button.Background>
+    			<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+    				<GradientStop Color="#FFF3F3F3" Offset="0"/>
+    				<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+    				<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+    				<GradientStop Color="#FFE12525" Offset="1"/>
+    			</LinearGradientBrush>
+    		</Button.Background>
+    	</Button>
+    <Label Height="25.96" Margin="266.006666666667,17.710822942643,231,0" x:Name="label1" VerticalAlignment="Top" Foreground="#FFFFFFFF" Content="&lt;---Name"/>
+    <Label Margin="266.006666666667,48.7108229426429,218,0" x:Name="label2" Height="27.96" VerticalAlignment="Top" Foreground="#FFFFFFFF"  Content="&lt;---PassWord"  />
+    <PasswordBox Margin="33,52.670822942643,0,0" x:Name="password" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="203" />
+    <TextBox Margin="33,23.670822942643,0,0" x:Name="usrName" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="203"/>
+  </Grid>
+</Window>
